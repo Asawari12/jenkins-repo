@@ -1,9 +1,11 @@
 pipeline {
-    agent any
+    agent none
 
     stages {
         stage ('Compile Stage') {
-
+            agent {
+                lable {
+                    lable "bulid-in"
             steps {
                 
                     sh 'mvn clean compile'
@@ -37,5 +39,7 @@ pipeline {
                 }
             
         }
+    }
+}
     }
 }
